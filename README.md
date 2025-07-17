@@ -49,6 +49,11 @@ MvcAdoCrudLoginApp/
 - SQL Server (Express or LocalDB)
 - .NET Framework 4.7.2 or later
 
+### DATABASE Changes
+
+1. Execute file **DropAndCreateScript.sql** in MSSQL for table and stored procedure.
+2. Execute file **InsertForUserAdmin.sql** in MSSQL for user creation in Users Table.
+
 ### Setup Instructions
 
 1. **Clone the repository:**
