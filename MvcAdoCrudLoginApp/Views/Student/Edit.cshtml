@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    var s = (MvcAdoCrudLoginApp.Models.Student)ViewData["student"];
+}
+@{
+    var username = string.Empty;
+
+    if (Session["Username"] != null)
+    {
+        username = Session["Username"].ToString();
+    }
+    else
+    {
+        <script>
+            window.location.href = '@Url.Action("Index", "Login")';
+        </script>
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+</head>
+<body>
+    <h2>Edit Student</h2>
+    <form method="post" action="/Student/Edit">
+        <input type="hidden" name="Id" value="@s.Id" />
+        <label>Name:</label> <input type="text" name="Name" value="@s.Name" /><br />
+        <label>Email:</label> <input type="text" name="Email" value="@s.Email" /><br />
+        <input type="submit" value="Update" />
+    </form>
+</body>
+</html>
+

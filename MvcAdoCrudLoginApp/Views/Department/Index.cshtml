@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Department";
+}
+
+@model List<MvcAdoCrudLoginApp.Models.Department>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Department CRUD</title>
+</head>
+<body>
+    <h2>Add Department</h2>
+    <form method="post" action="/Department/Add">
+        <input type="text" name="name" placeholder="Department Name" required />
+        <input type="submit" value="Add" />
+    </form>
+
+    <hr />
+
+    <h2>Departments List</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var dept in Model)
+        {
+            <tr>
+                <form method="post" action="/Department/Update">
+                <td><input type="hidden" name="id" value="@dept.Id" />@dept.Id</td>
+                <td><input type="text" name="name" value="@dept.Name" /></td>
+                <td>
+                    <input type="submit" value="Update" />
+                    <a href="/Department/Delete/@dept.Id" onclick="return confirm('Delete this?');">Delete</a>
+                </td>
+                </form>
+            </tr>
+        }
+    </table>
+</body>
+</html>

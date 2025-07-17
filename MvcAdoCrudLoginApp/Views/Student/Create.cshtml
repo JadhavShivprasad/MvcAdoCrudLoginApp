@@ -1,0 +1,161 @@
+﻿@{
+    ViewBag.Title = "Add Student";
+    var username = string.Empty;
+
+    //Layout = null;
+    if (Session["Username"] != null)
+    {
+        username = Session["Username"].ToString();
+    }
+    else
+    {
+        <script>
+            window.location.href = '@Url.Action("Index", "Login")';
+        </script>
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f4f6f9;
+        }
+
+        /*.navbar {
+            background-color: #212529;
+            padding: 12px 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .navbar a {
+                color: #ccc;
+                margin-right: 20px;
+                text-decoration: none;
+            }
+
+                .navbar a:hover {
+                    color: white;
+                }
+
+        .navbar-left a:first-child {
+            font-weight: bold;
+            color: white;
+            font-size: 18px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+            .navbar-right span {
+                margin-right: 15px;
+                font-weight: bold;
+            }*/
+
+        /*.logout-btn {
+            background-color: white;
+            color: red;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }*/
+
+        .containerNew {
+            max-width: 500px;
+            background: white;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+
+        /*.footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 13px;
+        }*/
+    </style>
+</head>
+<body>
+
+    @*<div class="navbar">
+        <div class="navbar-left">
+            <a href="#">Employee List</a>
+            <a href="#">Add Employee</a>
+            <a href="#">Departments</a>
+            <a href="#">Students</a>
+        </div>
+        <div class="navbar-right">
+            <span>Welcome, @username</span>
+            <form action="/Login/Logout" method="post" style="display:inline;">
+                <button class="logout-btn">Logout</button>
+            </form>
+        </div>
+    </div>*@
+
+    <div class="containerNew">
+        <h2>Add Student</h2>
+        <form method="post" action="/Student/Create">
+            <label for="Name">Name:</label>
+            <input type="text" name="Name" id="Name" required />
+
+            <label for="Email">Email:</label>
+            <input type="text" name="Email" id="Email" required />
+
+            <input type="submit" value="Save" />
+        </form>
+    </div>
+
+    @*<div class="footer">
+        &copy; 2025 - My ASP.NET Application
+    </div>*@
+</body>
+</html>

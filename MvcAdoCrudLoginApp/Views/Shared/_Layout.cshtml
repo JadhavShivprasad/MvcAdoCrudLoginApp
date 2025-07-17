@@ -1,0 +1,70 @@
+﻿
+@{
+    var username = string.Empty;
+
+    if (Session["Username"] != null)
+    {
+        username = Session["Username"].ToString();
+    }
+    else
+    {
+        <script>
+            window.location.href = '@Url.Action("Index", "Login")';
+        </script>
+    }
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Employee List", "Index", "Employee", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>*@
+                    <li>@Html.ActionLink("Add Employee", "Create", "Employee", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Departments", "Index", "Department", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Students", "Index", "Student", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li>
+                        <span style="color: white; font-weight: bold"> Welcome, @username</span>
+                    </li>
+                </ul>
+                <ul>
+                    @if (Session["Username"] != null)
+                    {
+                        <li class="nav-item navbar-nav ms-auto">
+                            <a class="btn av-link text-danger" style="background-color: white; font-weight: bold;" href="@Url.Action("Logout", "Login")">Logout</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
