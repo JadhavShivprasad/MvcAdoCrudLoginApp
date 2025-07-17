@@ -78,25 +78,31 @@ Replace YOUR_SERVER_NAME and YourPassword with your actual SQL Server credential
 
 <img width="1366" height="644" alt="image" src="https://github.com/user-attachments/assets/67186b08-e4f3-4649-b34a-8a8dc3165d56" />
 
+
 **Employee List with Edit Delete functionality**
 
 <img width="1366" height="643" alt="image" src="https://github.com/user-attachments/assets/81c2f0f8-17c4-47a5-8787-4be81eccf09a" />
+
 
 **Create Employee**
 
 <img width="1366" height="639" alt="image" src="https://github.com/user-attachments/assets/a0609f89-b95e-4ce1-ad14-36e512601b38" />
 
+
 **Department Dropdown**
 
 <img width="1366" height="640" alt="image" src="https://github.com/user-attachments/assets/65f7c469-1352-45f1-8bf3-c35b72d910b2" />
+
 
 **Department Add Edit page**
 
 <img width="1366" height="642" alt="image" src="https://github.com/user-attachments/assets/d9f22543-8494-48a0-80f0-aab785bd435c" />
 
+
 **Student List with Edit Delete functionality**
 
 <img width="1366" height="642" alt="image" src="https://github.com/user-attachments/assets/90c28752-822c-4a7d-a9ed-3b841435293f" />
+
 
 **Student add form**
 
