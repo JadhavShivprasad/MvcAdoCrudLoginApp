@@ -1,0 +1,1 @@
+insert Into Users values('admin', 'admin')
