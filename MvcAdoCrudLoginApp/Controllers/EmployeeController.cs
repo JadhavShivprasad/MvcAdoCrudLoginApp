@@ -153,7 +153,7 @@ namespace MvcAdoCrudLoginApp.Controllers
 
             Employee emp = new Employee();
             using (SqlConnection con = new SqlConnection(constr))
-            {
+            { 
                 SqlCommand cmd = new SqlCommand("sp_GetEmployeeById", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id", id);

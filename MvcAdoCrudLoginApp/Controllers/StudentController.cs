@@ -57,6 +57,7 @@ namespace MvcAdoCrudLoginApp.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Create(FormCollection form)
         {
@@ -103,6 +104,7 @@ namespace MvcAdoCrudLoginApp.Controllers
             ViewData["student"] = s;
             return View();
         }
+
         [HttpPost]
         public ActionResult Edit(FormCollection form)
         {
